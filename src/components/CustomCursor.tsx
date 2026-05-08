@@ -28,8 +28,8 @@ export default function CustomCursor() {
           transition: "transform 0.2s ease, width 0.2s, height 0.2s",
           width: 12, height: 12,
           borderRadius: 999,
-          background: "rgba(0, 245, 255, 0.9)",
-          boxShadow: "0 0 20px rgba(0, 245, 255, 0.8), 0 0 40px rgba(0, 245, 255, 0.4)",
+          background: "rgba(190, 255, 90, 0.95)",
+          boxShadow: "0 0 20px rgba(190, 255, 90, 0.8), 0 0 40px rgba(255, 140, 80, 0.4)",
           mixBlendMode: "screen",
         }}
       />
@@ -41,7 +41,7 @@ export default function CustomCursor() {
           transform: "translate(-50%, -50%)",
           width: hover ? 60 : 32, height: hover ? 60 : 32,
           borderRadius: 999,
-          border: "1px solid rgba(0, 245, 255, 0.4)",
+          border: "1px solid rgba(190, 255, 90, 0.5)",
           transition: "width 0.25s ease, height 0.25s ease, transform 0.15s ease-out",
         }}
       />
