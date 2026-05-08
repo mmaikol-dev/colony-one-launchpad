@@ -41,7 +41,7 @@ export default function CustomCursor() {
           transform: "translate(-50%, -50%)",
           width: hover ? 60 : 32, height: hover ? 60 : 32,
           borderRadius: 999,
-          border: "1px solid rgba(0, 245, 255, 0.4)",
+          border: "1px solid rgba(190, 255, 90, 0.5)",
           transition: "width 0.25s ease, height 0.25s ease, transform 0.15s ease-out",
         }}
       />
