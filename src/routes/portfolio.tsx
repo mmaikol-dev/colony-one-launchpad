@@ -14,20 +14,20 @@ export const Route = createFileRoute("/portfolio")({
   component: PortfolioPage,
 });
 
-type Cat = "All" | "Web Apps" | "Mobile" | "Enterprise" | "APIs";
+type Cat = "All" | "Fintech" | "Healthcare" | "Logistics" | "Enterprise" | "AI & Automation";
 
-const projects: { name: string; desc: string; tags: string[]; cat: Exclude<Cat, "All">; featured?: boolean }[] = [
-  { name: "Helios CRM", desc: "Sales operations platform for a fintech scale-up.", tags: ["React", "Node", "Postgres"], cat: "Web Apps", featured: true },
-  { name: "Apex Health", desc: "Telemedicine app serving 50k+ patients.", tags: ["Flutter", "Firebase"], cat: "Mobile" },
-  { name: "Forge ERP", desc: "Enterprise resource platform for manufacturing.", tags: ["Next.js", "GraphQL", "AWS"], cat: "Enterprise", featured: true },
-  { name: "Pulse Analytics", desc: "Realtime dashboard for ecommerce growth teams.", tags: ["React", "ClickHouse"], cat: "Web Apps" },
-  { name: "Beacon API", desc: "High-throughput payments API for African merchants.", tags: ["Go", "Postgres"], cat: "APIs" },
-  { name: "Nimbus", desc: "Cross-platform productivity app with offline sync.", tags: ["React Native", "Supabase"], cat: "Mobile" },
-  { name: "Atlas Logistics", desc: "Fleet management platform for global shipping.", tags: ["Next.js", "Mapbox"], cat: "Enterprise" },
-  { name: "Quanta Auth", desc: "Identity & access platform with SSO.", tags: ["Node", "OIDC"], cat: "APIs" },
+const projects: { name: string; desc: string; tags: string[]; cat: Exclude<Cat, "All">; client?: string; featured?: boolean }[] = [
+  { name: "Telewomens SACCO Accounting", client: "Telewomens Group", desc: "End-to-end SACCO accounting platform with member management, loans, and financial reporting.", tags: ["Next.js", "Postgres", "Node"], cat: "Fintech", featured: true },
+  { name: "RealDeal Logistics Platform", client: "RealDeal Logistics", desc: "Fleet, dispatch, and shipment tracking system with realtime driver telemetry.", tags: ["React", "Mapbox", "Node"], cat: "Logistics", featured: true },
+  { name: "Perisquare HMS", client: "Perisquare Medical & Laboratories", desc: "Hospital management system covering EMR, lab results, billing, and pharmacy.", tags: ["Next.js", "Postgres", "HL7"], cat: "Healthcare", featured: true },
+  { name: "Aquavita Operations", client: "Aquavita", desc: "Bottling and distribution operations platform with inventory and route management.", tags: ["React", "Supabase"], cat: "Enterprise" },
+  { name: "Phone Farm Orchestrator", desc: "Centralized control plane for managing large-scale phone farms and device fleets.", tags: ["Go", "ADB", "Redis"], cat: "AI & Automation" },
+  { name: "Warehouse Management System", desc: "Barcode-driven WMS with bin locations, picking waves, and realtime stock sync.", tags: ["Next.js", "Postgres"], cat: "Logistics" },
+  { name: "Payments Gateway", desc: "Multi-rail payments system supporting M-Pesa, cards, and bank transfers.", tags: ["Go", "Postgres", "Webhooks"], cat: "Fintech" },
+  { name: "Agentic AI Workforce", desc: "n8n + LLM agents that handle support, lead qualification, and back-office ops 24/7.", tags: ["n8n", "OpenAI", "LangGraph"], cat: "AI & Automation", featured: true },
 ];
 
-const filters: Cat[] = ["All", "Web Apps", "Mobile", "Enterprise", "APIs"];
+const filters: Cat[] = ["All", "Fintech", "Healthcare", "Logistics", "Enterprise", "AI & Automation"];
 
 function PortfolioPage() {
   const [filter, setFilter] = useState<Cat>("All");
@@ -88,6 +88,7 @@ function PortfolioPage() {
                     <h3 className="font-display text-xl font-semibold">{p.name}</h3>
                     <Github size={18} className="text-muted-foreground transition-colors group-hover:text-accent" />
                   </div>
+                  {p.client && <p className="mt-1 text-xs uppercase tracking-widest text-accent">{p.client}</p>}
                   <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {p.tags.map((t) => (
