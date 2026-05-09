@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Code, Building2, Smartphone, Plug, Cloud, Palette, ArrowRight } from "lucide-react";
+import { Code, Building2, Smartphone, Plug, Cloud, Palette, ArrowRight, Bot, Users, Workflow, Brain } from "lucide-react";
 import ParticleField from "@/components/ParticleField";
 
 export const Route = createFileRoute("/services")({
@@ -16,6 +16,10 @@ export const Route = createFileRoute("/services")({
 });
 
 const services = [
+  { icon: Brain, title: "Agentic AI Development", desc: "Autonomous AI agents that reason, plan, and execute complex multi-step workflows on your behalf." },
+  { icon: Users, title: "AI Agentic Employees", desc: "Always-on digital workers for sales, support, ops, and research — trained on your stack and SOPs." },
+  { icon: Workflow, title: "n8n & Workflow Automation", desc: "Custom n8n workflows, MCP integrations, and AI-powered automations that connect every tool you use." },
+  { icon: Bot, title: "LLM & RAG Solutions", desc: "Custom GPTs, fine-tuned models, vector search, and RAG pipelines built on your private data." },
   { icon: Code, title: "Custom Web Applications", desc: "Scalable, modern web apps built with React, Next.js, and the latest tooling — designed to perform and delight." },
   { icon: Building2, title: "Enterprise Software Solutions", desc: "Complex platforms tailored for large organizations. From internal tools to mission-critical systems." },
   { icon: Smartphone, title: "Mobile App Development", desc: "Native and cross-platform apps for iOS and Android using React Native and Flutter." },
@@ -39,6 +43,7 @@ const techCategories: Record<string, string[]> = {
   Mobile: ["React Native", "Flutter", "Swift", "Kotlin"],
   Cloud: ["AWS", "GCP", "Azure", "Cloudflare", "Vercel", "Docker", "Kubernetes"],
   Databases: ["PostgreSQL", "MongoDB", "Redis", "Firebase", "Supabase"],
+  "AI & Agents": ["OpenAI", "Anthropic Claude", "LangChain", "LangGraph", "n8n", "MCP", "Pinecone", "Vercel AI SDK"],
 };
 
 function ServicesPage() {
