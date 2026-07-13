@@ -79,32 +79,32 @@
 
 @layer utilities {
   .text-glow {
-    background: linear-gradient(135deg, oklch(0.95 0.18 130) 0%, oklch(0.82 0.22 100) 50%, oklch(0.75 0.21 50) 100%);
+    background: linear-gradient(135deg, oklch(0.90 0.16 210) 0%, oklch(0.78 0.20 280) 50%, oklch(0.72 0.24 330) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    filter: drop-shadow(0 0 30px oklch(0.88 0.22 130 / 0.4));
+    filter: drop-shadow(0 0 30px oklch(0.72 0.24 330 / 0.45));
   }
   .glass {
-    background: linear-gradient(135deg, oklch(0.22 0.015 60 / 0.6), oklch(0.16 0.012 60 / 0.4));
+    background: linear-gradient(135deg, oklch(0.24 0.05 285 / 0.65), oklch(0.16 0.04 275 / 0.45));
     backdrop-filter: blur(20px);
-    border: 1px solid oklch(0.88 0.22 130 / 0.15);
+    border: 1px solid oklch(0.82 0.16 210 / 0.18);
   }
   .glass-hover:hover {
-    border-color: oklch(0.88 0.20 200 / 0.5);
-    box-shadow: 0 0 40px oklch(0.88 0.20 200 / 0.2), inset 0 0 20px oklch(0.88 0.20 200 / 0.05);
+    border-color: oklch(0.72 0.24 330 / 0.55);
+    box-shadow: 0 0 40px oklch(0.72 0.24 330 / 0.25), inset 0 0 20px oklch(0.82 0.16 210 / 0.08);
   }
   .neon-border {
-    box-shadow: 0 0 20px oklch(0.88 0.22 130 / 0.3), inset 0 0 20px oklch(0.88 0.22 130 / 0.05);
+    box-shadow: 0 0 20px oklch(0.82 0.16 210 / 0.35), inset 0 0 20px oklch(0.72 0.24 330 / 0.08);
   }
   .grid-bg {
     background-image:
-      linear-gradient(oklch(0.88 0.22 130 / 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.88 0.22 130 / 0.05) 1px, transparent 1px);
+      linear-gradient(oklch(0.82 0.16 210 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.82 0.16 210 / 0.06) 1px, transparent 1px);
     background-size: 60px 60px;
   }
   .gradient-radial {
-    background: radial-gradient(ellipse at center, oklch(0.72 0.21 35 / 0.18), transparent 70%);
+    background: radial-gradient(ellipse at center, oklch(0.70 0.24 330 / 0.22), transparent 70%);
   }
   .marquee {
     animation: marquee 40s linear infinite;
@@ -120,8 +120,8 @@
   }
   .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
   @keyframes pulse-glow {
-    0%,100% { box-shadow: 0 0 0 0 oklch(0.7 0.25 145 / 0.7); }
-    50% { box-shadow: 0 0 0 12px oklch(0.7 0.25 145 / 0); }
+    0%,100% { box-shadow: 0 0 0 0 oklch(0.72 0.24 330 / 0.7); }
+    50% { box-shadow: 0 0 0 12px oklch(0.72 0.24 330 / 0); }
   }
   .tilt-card { transition: transform 0.3s ease, box-shadow 0.3s ease; transform-style: preserve-3d; }
   .tilt-card:hover { transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateZ(10px); }
