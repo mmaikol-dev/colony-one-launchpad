@@ -65,7 +65,7 @@ export default function ParticleField({ density = 80, interactive = true }: { de
           const d2 = dx * dx + dy * dy;
           if (d2 < 14000) {
             const alpha = (1 - d2 / 14000) * 0.35;
-            ctx.strokeStyle = `rgba(190, 255, 90, ${alpha})`;
+            ctx.strokeStyle = `rgba(120, 200, 255, ${alpha})`;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
           }
@@ -73,7 +73,7 @@ export default function ParticleField({ density = 80, interactive = true }: { de
       }
       // dots
       for (const p of particles) {
-        ctx.fillStyle = "rgba(220, 255, 150, 0.9)";
+        ctx.fillStyle = "rgba(200, 170, 255, 0.9)";
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
