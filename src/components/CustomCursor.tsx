@@ -26,11 +26,11 @@ export default function CustomCursor() {
           left: pos.x, top: pos.y,
           transform: `translate(-50%, -50%) scale(${hover ? 2.2 : 1})`,
           transition: "transform 0.2s ease, width 0.2s, height 0.2s",
-          width: 12, height: 12,
+          width: 10, height: 10,
           borderRadius: 999,
-          background: "rgba(140, 210, 255, 0.95)",
-          boxShadow: "0 0 20px rgba(140, 210, 255, 0.8), 0 0 40px rgba(220, 130, 255, 0.5)",
-          mixBlendMode: "screen",
+          background: "rgba(90, 50, 220, 0.95)",
+          boxShadow: "0 0 14px rgba(120, 70, 230, 0.6)",
+          mixBlendMode: "multiply",
         }}
       />
       <div
@@ -41,7 +41,7 @@ export default function CustomCursor() {
           transform: "translate(-50%, -50%)",
           width: hover ? 60 : 32, height: hover ? 60 : 32,
           borderRadius: 999,
-          border: "1px solid rgba(200, 170, 255, 0.55)",
+          border: "1.5px solid rgba(90, 50, 220, 0.4)",
           transition: "width 0.25s ease, height 0.25s ease, transform 0.15s ease-out",
         }}
       />
