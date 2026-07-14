@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { animate, stagger } from "animejs";
 import { ArrowRight, Code2, Cloud, Smartphone, Sparkles, Brain, Workflow } from "lucide-react";
 import ParticleField from "@/components/ParticleField";
 import CountUp from "@/components/CountUp";
