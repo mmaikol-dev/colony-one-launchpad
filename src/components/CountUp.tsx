@@ -1,34 +1,41 @@
-import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { animate } from "animejs";
 
 export default function CountUp({ to, suffix = "", duration = 2 }: { to: number; suffix?: string; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
   const [val, setVal] = useState(0);
+  const started = useRef(false);
 
   useEffect(() => {
-    if (!inView) return;
-    const start = performance.now();
-    let raf = 0;
-    const tick = (now: number) => {
-      const t = Math.min(1, (now - start) / (duration * 1000));
-      const eased = 1 - Math.pow(1 - t, 3);
-      setVal(Math.round(to * eased));
-      if (t < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [inView, to, duration]);
+    if (!ref.current) return;
+    const el = ref.current;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting && !started.current) {
+          started.current = true;
+          const obj = { n: 0 };
+          animate(obj, {
+            n: to,
+            duration: duration * 1000,
+            ease: "outCubic",
+            onUpdate: () => setVal(Math.round(obj.n)),
+          });
+          animate(el, {
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 700,
+            ease: "outExpo",
+          });
+        }
+      });
+    }, { rootMargin: "-100px" });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [to, duration]);
 
   return (
-    <motion.span
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6 }}
-      className="font-display text-5xl font-bold text-glow md:text-6xl"
-    >
+    <span ref={ref} style={{ opacity: 0 }} className="font-display text-5xl font-bold text-glow md:text-6xl">
       {val}{suffix}
-    </motion.span>
+    </span>
   );
 }
