@@ -1,54 +1,31 @@
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { Environment, Float, Sparkles } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Float, MeshDistortMaterial, Environment, ContactShadows } from "@react-three/drei";
 import { Suspense, useRef } from "react";
-import { TextureLoader, type Group, type Mesh } from "three";
-import logoUrl from "@/assets/colony-one-logo.png";
+import type { Mesh } from "three";
 
-function LogoPlane() {
-  const texture = useLoader(TextureLoader, logoUrl);
+function Knot() {
   const ref = useRef<Mesh>(null);
-  useFrame((s) => {
+  useFrame((state) => {
     if (!ref.current) return;
-    const t = s.clock.elapsedTime;
-    ref.current.rotation.y = Math.sin(t * 0.6) * 0.35;
-    ref.current.rotation.x = Math.sin(t * 0.4) * 0.12;
-    ref.current.position.y = Math.sin(t * 1.2) * 0.08;
+    ref.current.rotation.x = state.clock.elapsedTime * 0.15;
+    ref.current.rotation.y = state.clock.elapsedTime * 0.2;
   });
   return (
-    <Float speed={1.4} rotationIntensity={0.2} floatIntensity={0.6}>
-      <mesh ref={ref}>
-        <planeGeometry args={[2.6, 2.6]} />
-        <meshStandardMaterial
-          map={texture}
-          transparent
-          alphaTest={0.02}
-          emissiveMap={texture}
-          emissive="#ffffff"
-          emissiveIntensity={0.35}
-          metalness={0.4}
-          roughness={0.35}
-        />
-      </mesh>
-    </Float>
+    <mesh ref={ref} scale={1.4}>
+      <torusKnotGeometry args={[1, 0.32, 220, 32]} />
+      <MeshDistortMaterial color="#6a3cff" distort={0.35} speed={1.6} roughness={0.15} metalness={0.6} />
+    </mesh>
   );
 }
 
-function Ring({ radius, color, speed, tilt }: { radius: number; color: string; speed: number; tilt: number }) {
-  const ref = useRef<Group>(null);
-  useFrame((s) => {
-    if (ref.current) ref.current.rotation.z = s.clock.elapsedTime * speed;
-  });
+function Blob({ position, color, scale = 1 }: { position: [number, number, number]; color: string; scale?: number }) {
   return (
-    <group ref={ref} rotation={[tilt, 0, 0]}>
-      <mesh>
-        <torusGeometry args={[radius, 0.015, 16, 160]} />
-        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.9} />
+    <Float speed={1.4} rotationIntensity={0.8} floatIntensity={1.2}>
+      <mesh position={position} scale={scale}>
+        <icosahedronGeometry args={[0.6, 4]} />
+        <MeshDistortMaterial color={color} distort={0.5} speed={2} roughness={0.1} metalness={0.4} />
       </mesh>
-      <mesh position={[radius, 0, 0]}>
-        <sphereGeometry args={[0.07, 24, 24]} />
-        <meshStandardMaterial color={color} emissive={color} emissiveIntensity={1.6} />
-      </mesh>
-    </group>
+    </Float>
   );
 }
 
@@ -56,16 +33,18 @@ export default function Scene3D({ className = "" }: { className?: string }) {
   return (
     <div className={className}>
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }} dpr={[1, 1.8]} gl={{ antialias: true, alpha: true }}>
-        <ambientLight intensity={0.9} />
-        <directionalLight position={[4, 4, 5]} intensity={1.1} />
-        <pointLight position={[-4, -2, 3]} intensity={0.6} color="#a97bff" />
+        <ambientLight intensity={0.7} />
+        <directionalLight position={[5, 5, 5]} intensity={1.2} />
+        <directionalLight position={[-5, -3, -3]} intensity={0.5} color="#ff5ac8" />
         <Suspense fallback={null}>
-          <LogoPlane />
-          <Ring radius={1.9} color="#6a3cff" speed={0.35} tilt={1.2} />
-          <Ring radius={2.25} color="#4fb3ff" speed={-0.25} tilt={0.5} />
-          <Ring radius={2.6} color="#ff5ac8" speed={0.18} tilt={-0.4} />
-          <Sparkles count={60} scale={6} size={2} speed={0.4} color="#a97bff" />
-          <Environment preset="studio" />
+          <Float speed={1.2} rotationIntensity={0.6} floatIntensity={1}>
+            <Knot />
+          </Float>
+          <Blob position={[-2.6, 1.4, -1]} color="#4fb3ff" scale={0.7} />
+          <Blob position={[2.5, -1.2, -0.5]} color="#ff5ac8" scale={0.55} />
+          <Blob position={[2.8, 1.6, -2]} color="#a97bff" scale={0.4} />
+          <ContactShadows position={[0, -1.8, 0]} opacity={0.25} scale={8} blur={2.4} far={2.5} />
+          <Environment preset="city" />
         </Suspense>
       </Canvas>
     </div>
