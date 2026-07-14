@@ -80,6 +80,20 @@ const projects = [
 ];
 
 function HomePage() {
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!heroRef.current) return;
+    const targets = heroRef.current.querySelectorAll<HTMLElement>("[data-hero]");
+    animate(targets, {
+      opacity: [0, 1],
+      translateY: [30, 0],
+      duration: 900,
+      delay: stagger(120, { start: 100 }),
+      ease: "outExpo",
+    });
+  }, []);
+
   return (
     <>
       {/* HERO with 3D scene */}
@@ -88,37 +102,33 @@ function HomePage() {
         <div className="absolute inset-0 dot-bg opacity-60" />
         <ParticleField density={90} />
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-6 lg:grid-cols-2">
+        <div ref={heroRef} className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-6 lg:grid-cols-2">
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+            <div
+              data-hero
+              style={{ opacity: 0 }}
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-xs uppercase tracking-widest text-primary backdrop-blur"
             >
               <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
               Engineering the Future
-            </motion.div>
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
+            </div>
+            <h1
+              data-hero
+              style={{ opacity: 0 }}
               className="font-display text-6xl font-bold leading-[0.95] md:text-8xl"
             >
               Colony <span className="text-glow">One</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+            </h1>
+            <p
+              data-hero
+              style={{ opacity: 0 }}
               className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl"
             >
               We build custom software, agentic AI, and enterprise platforms — one elegant solution at a time.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+            </p>
+            <div
+              data-hero
+              style={{ opacity: 0 }}
               className="mt-10 flex flex-wrap items-center gap-4"
             >
               <Link to="/portfolio" className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 font-medium text-primary-foreground transition-all hover:shadow-[0_20px_40px_-10px_var(--primary)]">
@@ -127,7 +137,7 @@ function HomePage() {
               <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-7 py-3 font-medium backdrop-blur hover:border-primary">
                 Start a Project
               </Link>
-            </motion.div>
+            </div>
           </div>
 
           {/* 3D showcase */}
