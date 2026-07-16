@@ -19,9 +19,9 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-8xl font-bold text-glow">404</h1>
-        <p className="mt-4 text-muted-foreground">Lost in the colony.</p>
-        <Link to="/" className="mt-6 inline-flex rounded-full bg-accent px-6 py-2 text-sm font-medium text-accent-foreground">Go Home</Link>
+        <h1 className="font-display text-8xl font-bold text-glow tracking-widest">CDIV</h1>
+        <p className="mt-4 text-muted-foreground italic">You wander beyond the acropolis. This path is not mapped in the marble.</p>
+        <Link to="/" className="mt-6 inline-flex rounded-sm border border-primary/50 bg-primary/10 px-6 py-2 text-sm font-display uppercase tracking-widest text-primary hover:bg-primary hover:text-primary-foreground">Return to Olympus</Link>
       </div>
     </div>
   );
@@ -46,22 +46,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Colony One — Engineering the Future, One Solution at a Time" },
-      { name: "description", content: "Colony One is a software company building custom web, mobile, and enterprise software solutions for businesses worldwide." },
-      { property: "og:title", content: "Colony One — Engineering the Future, One Solution at a Time" },
-      { property: "og:description", content: "Colony One is a software company building custom web, mobile, and enterprise software solutions for businesses worldwide." },
+      { title: "Colony One — Mythos of Builders" },
+      { name: "description", content: "Where the divine bee-queens and Spartan ants of Colony One forge software worthy of Olympus — web, mobile, enterprise platforms, and agentic AI." },
+      { property: "og:title", content: "Colony One — Mythos of Builders" },
+      { property: "og:description", content: "Divine architects of software. Bees and ants of the digital acropolis." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Colony One — Engineering the Future, One Solution at a Time" },
-      { name: "twitter:description", content: "Colony One is a software company building custom web, mobile, and enterprise software solutions for businesses worldwide." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/669c7567-1585-4391-b2cb-35d124351ea7/id-preview-d91a06d9--db76d7ec-f131-4150-a684-fcd4d7dfccae.lovable.app-1778239748022.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/669c7567-1585-4391-b2cb-35d124351ea7/id-preview-d91a06d9--db76d7ec-f131-4150-a684-fcd4d7dfccae.lovable.app-1778239748022.png" },
+      { name: "twitter:title", content: "Colony One — Mythos of Builders" },
+      { name: "twitter:description", content: "Divine architects of software. Bees and ants of the digital acropolis." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" },
     ],
   }),
   shellComponent: RootShell,

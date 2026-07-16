@@ -1,14 +1,13 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-import logo from "@/assets/colony-one-logo.png";
+import { Menu, X, Hexagon } from "lucide-react";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Acropolis" },
+  { to: "/about", label: "The Colony" },
+  { to: "/services", label: "Rites" },
+  { to: "/portfolio", label: "Chronicles" },
+  { to: "/contact", label: "Petition" },
 ] as const;
 
 export default function Navbar() {
@@ -29,14 +28,17 @@ export default function Navbar() {
     <>
       <header
         className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
-          scrolled ? "border-b border-border bg-background/70 backdrop-blur-xl" : "bg-transparent"
+          scrolled ? "border-b border-primary/25 bg-background/80 backdrop-blur-xl" : "bg-transparent"
         }`}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link to="/" className="flex items-center gap-3 group">
-            <img src={logo} alt="Colony One" className="h-10 w-auto transition-transform group-hover:scale-110" />
-            <span className="font-display text-lg font-semibold tracking-tight">
-              Colony<span className="text-accent">One</span>
+          <Link to="/" className="group flex items-center gap-3">
+            <span className="relative flex h-10 w-10 items-center justify-center">
+              <Hexagon className="absolute inset-0 h-full w-full text-primary" strokeWidth={1.25} />
+              <span className="font-display text-sm font-bold text-primary">Ϙ</span>
+            </span>
+            <span className="font-display text-lg font-semibold uppercase tracking-[0.22em]">
+              Colony <span className="text-gold">One</span>
             </span>
           </Link>
 
@@ -47,14 +49,14 @@ export default function Navbar() {
                 <li key={l.to}>
                   <Link
                     to={l.to}
-                    className={`relative text-sm font-medium transition-colors ${
+                    className={`relative font-display text-xs uppercase tracking-[0.24em] transition-colors ${
                       active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     {l.label}
                     <span
-                      className={`absolute -bottom-1 left-0 h-px bg-accent transition-all duration-300 ${
-                        active ? "w-full shadow-[0_0_10px_var(--cyan)]" : "w-0"
+                      className={`absolute -bottom-1.5 left-0 h-px bg-primary transition-all duration-300 ${
+                        active ? "w-full shadow-[0_0_10px_var(--gold)]" : "w-0"
                       }`}
                     />
                   </Link>
@@ -66,9 +68,9 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <Link
               to="/contact"
-              className="hidden md:inline-flex items-center rounded-full border border-accent/40 bg-accent/10 px-5 py-2 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-accent-foreground hover:shadow-[0_0_30px_var(--cyan)]"
+              className="hidden md:inline-flex items-center rounded-sm border border-primary/50 bg-primary/10 px-5 py-2 font-display text-[11px] uppercase tracking-[0.22em] text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_30px_var(--gold)]"
             >
-              Start a Project
+              Summon Us
             </Link>
             <button
               aria-label="Menu"
@@ -87,14 +89,14 @@ export default function Navbar() {
             <Link
               key={l.to}
               to={l.to}
-              className="font-display text-3xl font-semibold animate-fade-in"
+              className="font-display text-2xl uppercase tracking-[0.24em] animate-fade-in"
               style={{ animationDelay: `${i * 60}ms` }}
             >
               {l.label}
             </Link>
           ))}
-          <Link to="/contact" className="mt-4 rounded-full bg-accent px-8 py-3 text-sm font-medium text-accent-foreground">
-            Start a Project
+          <Link to="/contact" className="mt-4 rounded-sm border border-primary bg-primary px-8 py-3 font-display text-xs uppercase tracking-[0.22em] text-primary-foreground">
+            Summon Us
           </Link>
         </div>
       )}
