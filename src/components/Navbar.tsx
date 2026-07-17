@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { Menu, X, Hexagon } from "lucide-react";
 
 const links = [
-  { to: "/", label: "Acropolis" },
-  { to: "/about", label: "The Colony" },
-  { to: "/services", label: "Rites" },
-  { to: "/portfolio", label: "Chronicles" },
-  { to: "/contact", label: "Petition" },
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/services", label: "Services" },
+  { to: "/portfolio", label: "Work" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export default function Navbar() {
@@ -70,7 +70,7 @@ export default function Navbar() {
               to="/contact"
               className="hidden md:inline-flex items-center rounded-sm border border-primary/50 bg-primary/10 px-5 py-2 font-display text-[11px] uppercase tracking-[0.22em] text-primary transition-all hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_30px_var(--gold)]"
             >
-              Summon Us
+              Get in touch
             </Link>
             <button
               aria-label="Menu"
@@ -96,7 +96,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link to="/contact" className="mt-4 rounded-sm border border-primary bg-primary px-8 py-3 font-display text-xs uppercase tracking-[0.22em] text-primary-foreground">
-            Summon Us
+            Get in touch
           </Link>
         </div>
       )}

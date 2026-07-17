@@ -15,28 +15,28 @@ import beeQueen from "@/assets/myth-bee-queen.jpg";
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Chronicles — Colony One" },
-      { name: "description", content: "Chronicles of the colony: platforms, temples and citadels we have forged for allies across three continents." },
+      { title: "Portfolio — Colony One" },
+      { name: "description", content: "Selected work from Colony One: SACCO, hospital, logistics, warehouse, payments and AI systems." },
       { property: "og:image", content: beePalace },
     ],
   }),
   component: PortfolioPage,
 });
 
-type Cat = "All" | "Treasury" | "Asclepion" | "Cartography" | "Citadel" | "Oracles";
+type Cat = "All" | "Fintech" | "Healthcare" | "Logistics" | "Enterprise" | "AI";
 
 const projects: { name: string; desc: string; tags: string[]; cat: Exclude<Cat, "All">; client?: string; featured?: boolean; img: string }[] = [
-  { name: "Telewomens SACCO Treasury", client: "Telewomens Group", desc: "A treasury of the co-operative — member scrolls, loans, and sacred ledgers of finance.", tags: ["Next.js", "Postgres", "Node"], cat: "Treasury", featured: true, img: nectar },
-  { name: "RealDeal Logistics Roads",  client: "RealDeal Logistics", desc: "Chariots of trade — fleet, dispatch and realtime scouts across the empire's roads.", tags: ["React", "Mapbox", "Node"], cat: "Cartography", featured: true, img: antMetropolis },
-  { name: "Perisquare Asclepion",       client: "Perisquare Medical & Laboratories", desc: "A temple of Asclepius: patient scrolls, laboratories, apothecary and billing rites.", tags: ["Next.js", "Postgres", "HL7"], cat: "Asclepion", featured: true, img: architect },
-  { name: "Aquavita Waterworks",        client: "Aquavita", desc: "Bottling and distribution operations, orchestrated like Roman aqueducts.", tags: ["React", "Supabase"], cat: "Citadel", img: statues },
-  { name: "Phone Farm Praetorium",      desc: "A centralised praetorium commanding vast phone farms and device legions.", tags: ["Go", "ADB", "Redis"], cat: "Oracles", img: antWarrior },
-  { name: "Warehouse Citadel (WMS)",    desc: "Barcode-driven fortress with bin locations, picking waves and realtime inventory rites.", tags: ["Next.js", "Postgres"], cat: "Citadel", img: amphitheater },
-  { name: "Payments Aqueduct",          desc: "Multi-rail payments channel — M-Pesa, cards and bank transfers flowing as one river.", tags: ["Go", "Postgres", "Webhooks"], cat: "Treasury", img: beePalace },
-  { name: "Agentic Oracle Court",       desc: "n8n and LLM agents that hear petitions, qualify leads and run back-office rites, day and night.", tags: ["n8n", "OpenAI", "LangGraph"], cat: "Oracles", featured: true, img: beeQueen },
+  { name: "Telewomens SACCO",          client: "Telewomens Group",           desc: "Cooperative treasury platform: members, loans and financial ledgers.", tags: ["Next.js", "Postgres", "Node"], cat: "Fintech",   featured: true, img: nectar },
+  { name: "RealDeal Logistics",        client: "RealDeal Logistics",         desc: "Fleet, dispatch and realtime tracking for logistics operations.",     tags: ["React", "Mapbox", "Node"],     cat: "Logistics", featured: true, img: antMetropolis },
+  { name: "Perisquare HMS",            client: "Perisquare Medical & Labs",  desc: "Hospital management system: EMR, laboratories, pharmacy and billing.", tags: ["Next.js", "Postgres", "HL7"],  cat: "Healthcare",featured: true, img: architect },
+  { name: "Aquavita Operations",       client: "Aquavita",                   desc: "Bottling and distribution operations platform.",                       tags: ["React", "Supabase"],           cat: "Enterprise", img: statues },
+  { name: "Phone Farm Control System", desc: "Centralised control system for large phone farms and device fleets.",                                        tags: ["Go", "ADB", "Redis"],           cat: "Enterprise", img: antWarrior },
+  { name: "Warehouse Management (WMS)",desc: "Barcode-driven WMS with bin locations, picking waves and realtime inventory.",                              tags: ["Next.js", "Postgres"],          cat: "Enterprise", img: amphitheater },
+  { name: "Payments Platform",         desc: "Multi-rail payments: M-Pesa, cards and bank transfers through a single API.",                               tags: ["Go", "Postgres", "Webhooks"],   cat: "Fintech",    img: beePalace },
+  { name: "Agentic AI Workflows",      desc: "n8n and LLM agents that qualify leads and run back-office tasks 24/7.",                                     tags: ["n8n", "OpenAI", "LangGraph"],   cat: "AI", featured: true, img: beeQueen },
 ];
 
-const filters: Cat[] = ["All", "Treasury", "Asclepion", "Cartography", "Citadel", "Oracles"];
+const filters: Cat[] = ["All", "Fintech", "Healthcare", "Logistics", "Enterprise", "AI"];
 
 function PortfolioPage() {
   const [filter, setFilter] = useState<Cat>("All");
@@ -49,10 +49,10 @@ function PortfolioPage() {
       <section className="relative mx-auto max-w-7xl px-6 py-12 text-center">
         <div className="absolute inset-0 mesh-bg opacity-70" />
         <div className="relative">
-          <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Great Library</p>
-          <h1 className="mt-4 font-display text-5xl font-bold uppercase md:text-7xl">The <span className="text-glow">Chronicles</span></h1>
+          <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Our work</p>
+          <h1 className="mt-4 font-display text-5xl font-bold uppercase md:text-7xl">Selected <span className="text-glow">projects</span></h1>
           <div className="laurel-divider my-6 mx-auto max-w-md"><span className="font-display text-[11px] uppercase tracking-[0.28em]">✦</span></div>
-          <p className="mx-auto max-w-xl font-serif text-lg italic text-muted-foreground">Selected works from our marble scriptorium, arranged by discipline.</p>
+          <p className="mx-auto max-w-xl font-serif text-lg italic text-muted-foreground">Platforms and systems we've built for clients across industries.</p>
 
           <div className="mx-auto mt-10 flex flex-wrap justify-center gap-2">
             {filters.map((f) => (
@@ -92,7 +92,7 @@ function PortfolioPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-transparent" />
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
                         <div className="flex items-center gap-2 rounded-sm border border-primary bg-primary px-5 py-2 font-display text-[11px] uppercase tracking-[0.22em] text-primary-foreground shadow-lg">
-                          Read Chronicle <ExternalLink size={12} />
+                          View project <ExternalLink size={12} />
                         </div>
                       </div>
                     </div>
@@ -117,15 +117,15 @@ function PortfolioPage() {
         </motion.div>
 
         <p className="mt-10 text-center font-serif italic text-muted-foreground">
-          More scrolls on GitHub —{" "}
+          More on GitHub —{" "}
           <a href="https://github.com/mmaikol-dev" target="_blank" rel="noreferrer" className="text-primary hover:underline">github.com/mmaikol-dev</a>
         </p>
       </section>
 
       {/* CASE STUDY SPOTLIGHT */}
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Illuminated Manuscripts</p>
-        <h2 className="mt-2 font-display text-4xl font-bold uppercase md:text-5xl">Featured <span className="text-glow">chronicles</span></h2>
+        <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Case studies</p>
+        <h2 className="mt-2 font-display text-4xl font-bold uppercase md:text-5xl">Featured <span className="text-glow">work</span></h2>
         <div className="mt-12 space-y-8">
           {featured.map((f) => (
             <motion.div key={f.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid gap-8 overflow-hidden glass p-6 md:grid-cols-[1.1fr_1fr] md:p-8">
@@ -142,16 +142,16 @@ function PortfolioPage() {
                 {f.client && <p className="mt-1 font-display text-[10px] uppercase tracking-[0.28em] text-primary">{f.client}</p>}
                 <div className="mt-6 grid gap-6 sm:grid-cols-3">
                   <div>
-                    <p className="font-display text-[10px] uppercase tracking-[0.28em] text-primary">The Trial</p>
-                    <p className="mt-2 font-serif text-muted-foreground">Legacy systems were slow and impossible to scale.</p>
+                    <p className="font-display text-[10px] uppercase tracking-[0.28em] text-primary">Challenge</p>
+                    <p className="mt-2 font-serif text-muted-foreground">Legacy systems were slow and hard to scale.</p>
                   </div>
                   <div>
-                    <p className="font-display text-[10px] uppercase tracking-[0.28em] text-primary">The Rite</p>
-                    <p className="mt-2 font-serif text-muted-foreground">A modern platform, service-oriented and blessed with realtime sync.</p>
+                    <p className="font-display text-[10px] uppercase tracking-[0.28em] text-primary">Solution</p>
+                    <p className="mt-2 font-serif text-muted-foreground">A modern platform with service-oriented architecture and realtime sync.</p>
                   </div>
                   <div>
-                    <p className="font-display text-[10px] uppercase tracking-[0.28em] text-primary">The Omen</p>
-                    <p className="mt-2 font-serif text-muted-foreground">3× swifter workflows and 60% fewer supplications to the support altar.</p>
+                    <p className="font-display text-[10px] uppercase tracking-[0.28em] text-primary">Result</p>
+                    <p className="mt-2 font-serif text-muted-foreground">3× faster workflows and 60% fewer support tickets.</p>
                   </div>
                 </div>
               </div>
@@ -162,9 +162,9 @@ function PortfolioPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-4xl px-6 py-32 text-center">
-        <h2 className="font-display text-4xl font-bold uppercase md:text-6xl">Shall your name be <span className="text-glow">the next chronicle?</span></h2>
+        <h2 className="font-display text-4xl font-bold uppercase md:text-6xl">Want to be <span className="text-glow">the next project?</span></h2>
         <Link to="/contact" className="mt-10 inline-flex items-center gap-2 rounded-sm border border-primary bg-primary px-8 py-4 font-display text-xs uppercase tracking-[0.24em] text-primary-foreground transition-all hover:shadow-[0_25px_50px_-10px_var(--gold)]">
-          Petition the Colony <ArrowRight size={16} />
+          Start a project <ArrowRight size={16} />
         </Link>
       </section>
     </div>

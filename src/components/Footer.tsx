@@ -17,45 +17,45 @@ export default function Footer() {
             </span>
           </div>
           <p className="mt-4 font-serif text-sm italic text-muted-foreground">
-            Where divine bees and Spartan ants forge software worthy of the gods.
+            A software studio building modern platforms for growing businesses.
           </p>
         </div>
 
         <div>
-          <h4 className="font-display text-xs uppercase tracking-[0.24em] text-foreground">The Order</h4>
+          <h4 className="font-display text-xs uppercase tracking-[0.24em] text-foreground">Company</h4>
           <ul className="mt-4 space-y-2 font-serif text-muted-foreground">
-            <li><Link to="/about" className="hover:text-primary">The Colony</Link></li>
-            <li><Link to="/portfolio" className="hover:text-primary">Chronicles</Link></li>
-            <li><Link to="/contact" className="hover:text-primary">Petition</Link></li>
+            <li><Link to="/about" className="hover:text-primary">About</Link></li>
+            <li><Link to="/portfolio" className="hover:text-primary">Work</Link></li>
+            <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-display text-xs uppercase tracking-[0.24em] text-foreground">Sacred Rites</h4>
+          <h4 className="font-display text-xs uppercase tracking-[0.24em] text-foreground">Services</h4>
           <ul className="mt-4 space-y-2 font-serif text-muted-foreground">
-            <li><Link to="/services" className="hover:text-primary">Web Temples</Link></li>
-            <li><Link to="/services" className="hover:text-primary">Mobile Auguries</Link></li>
-            <li><Link to="/services" className="hover:text-primary">Enterprise Citadels</Link></li>
-            <li><Link to="/services" className="hover:text-primary">Agentic Oracles</Link></li>
+            <li><Link to="/services" className="hover:text-primary">Web Applications</Link></li>
+            <li><Link to="/services" className="hover:text-primary">Mobile Apps</Link></li>
+            <li><Link to="/services" className="hover:text-primary">Enterprise Systems</Link></li>
+            <li><Link to="/services" className="hover:text-primary">Agentic AI</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-display text-xs uppercase tracking-[0.24em] text-foreground">Envoys</h4>
+          <h4 className="font-display text-xs uppercase tracking-[0.24em] text-foreground">Follow</h4>
           <div className="mt-4 flex gap-3">
             <a href="https://github.com/mmaikol-dev" target="_blank" rel="noreferrer" className="rounded-sm border border-primary/40 p-2 text-muted-foreground hover:border-primary hover:text-primary transition-colors"><Github size={18} /></a>
             <a href="#" className="rounded-sm border border-primary/40 p-2 text-muted-foreground hover:border-primary hover:text-primary transition-colors"><Linkedin size={18} /></a>
             <a href="#" className="rounded-sm border border-primary/40 p-2 text-muted-foreground hover:border-primary hover:text-primary transition-colors"><Twitter size={18} /></a>
           </div>
           <form className="mt-4 flex" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="your.scroll@olympus" className="w-full rounded-l-sm border border-primary/40 bg-input px-3 py-2 font-serif text-sm outline-none focus:border-primary" />
-            <button className="rounded-r-sm bg-primary px-3 font-display text-[11px] uppercase tracking-widest text-primary-foreground">Enlist</button>
+            <input type="email" placeholder="you@company.com" className="w-full rounded-l-sm border border-primary/40 bg-input px-3 py-2 font-serif text-sm outline-none focus:border-primary" />
+            <button className="rounded-r-sm bg-primary px-3 font-display text-[11px] uppercase tracking-widest text-primary-foreground">Subscribe</button>
           </form>
         </div>
       </div>
       <div className="border-t border-primary/20">
         <p className="mx-auto max-w-7xl px-6 py-6 text-center font-display text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
-          © MMXXVI · Colony One · Forged in Marble & Honey
+          © 2026 · Colony One · Software, AI & Automation
         </p>
       </div>
     </footer>
