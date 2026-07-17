@@ -8,8 +8,8 @@ import amphitheater from "@/assets/myth-amphitheater.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Petition — Colony One" },
-      { name: "description", content: "Bring your labour to the marble tables of Colony One. We answer within a single sun's turn." },
+      { title: "Contact — Colony One" },
+      { name: "description", content: "Tell us about your project. We reply within one business day." },
       { property: "og:image", content: amphitheater },
     ],
   }),
@@ -17,11 +17,11 @@ export const Route = createFileRoute("/contact")({
 });
 
 const faqs = [
-  { q: "How long does a rite of building take?",        a: "Most works are consecrated in 6–16 weeks depending on scope. A detailed scroll of timings follows the divination phase." },
-  { q: "Do you serve allies beyond these borders?",     a: "Yes — we work with envoys across Africa, Europe and North America. Asynchronous scrolls are our default." },
-  { q: "What is the ceremony of building?",             a: "Divination → Blueprint → Forge → Trial → Consecrate → Tend. Weekly demos, unwavering transparency." },
-  { q: "Do you tend the temple after opening?",         a: "Absolutely. Monthly retainers and SLAs for ongoing rites of monitoring and evolution." },
-  { q: "How do we begin?",                              a: "Send your scroll through the petition below. A discovery audience is arranged within a single sun's turn." },
+  { q: "How long does a project take?",         a: "Most projects ship in 6–16 weeks depending on scope. We'll give you a detailed timeline after discovery." },
+  { q: "Do you work with clients outside Kenya?", a: "Yes — we work with clients across Africa, Europe and North America. Async communication is our default." },
+  { q: "What's your process?",                   a: "Discover → Design → Build → Test → Ship → Support. Weekly demos and full transparency throughout." },
+  { q: "Do you offer ongoing support?",          a: "Absolutely. We offer monthly retainers and SLAs for maintenance, monitoring and continuous improvement." },
+  { q: "How do we get started?",                 a: "Send us a message using the form below. We'll set up a discovery call within one business day." },
 ];
 
 function ContactPage() {
@@ -52,10 +52,10 @@ function ContactPage() {
         </div>
         <ParticleField density={40} />
         <div className="relative mx-auto max-w-3xl px-6">
-          <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Petition</p>
-          <h1 className="mt-4 font-display text-5xl font-bold uppercase md:text-7xl">Speak to the <span className="text-glow">Colony</span></h1>
+          <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Contact</p>
+          <h1 className="mt-4 font-display text-5xl font-bold uppercase md:text-7xl">Get in <span className="text-glow">touch</span></h1>
           <div className="laurel-divider my-6 mx-auto max-w-md"><span className="font-display text-[11px] uppercase tracking-[0.28em]">✦</span></div>
-          <p className="mx-auto max-w-xl font-serif text-lg italic text-muted-foreground">Bring us your labour. We answer within a single sun's turn.</p>
+          <p className="mx-auto max-w-xl font-serif text-lg italic text-muted-foreground">Tell us about your project. We reply within one business day.</p>
         </div>
       </section>
 
@@ -68,12 +68,12 @@ function ContactPage() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-primary" />
               </span>
-              <span className="font-display uppercase tracking-[0.28em] text-primary">Accepting new petitions</span>
+              <span className="font-display uppercase tracking-[0.28em] text-primary">Accepting new projects</span>
             </p>
             <ul className="space-y-4 font-serif">
-              <li className="flex items-start gap-3"><Mail className="mt-0.5 text-primary" size={18} /><div><p className="font-display text-[10px] uppercase tracking-[0.24em] text-muted-foreground">Envoy</p><a href="mailto:hello@colonyone.com" className="text-foreground hover:text-primary">hello@colonyone.com</a></div></li>
-              <li className="flex items-start gap-3"><MapPin className="mt-0.5 text-primary" size={18} /><div><p className="font-display text-[10px] uppercase tracking-[0.24em] text-muted-foreground">Acropolis</p><p>Nairobi, Kenya</p></div></li>
-              <li className="flex items-start gap-3"><Clock className="mt-0.5 text-primary" size={18} /><div><p className="font-display text-[10px] uppercase tracking-[0.24em] text-muted-foreground">Reply within</p><p>One sun's turn</p></div></li>
+              <li className="flex items-start gap-3"><Mail className="mt-0.5 text-primary" size={18} /><div><p className="font-display text-[10px] uppercase tracking-[0.24em] text-muted-foreground">Email</p><a href="mailto:hello@colonyone.com" className="text-foreground hover:text-primary">hello@colonyone.com</a></div></li>
+              <li className="flex items-start gap-3"><MapPin className="mt-0.5 text-primary" size={18} /><div><p className="font-display text-[10px] uppercase tracking-[0.24em] text-muted-foreground">Location</p><p>Nairobi, Kenya</p></div></li>
+              <li className="flex items-start gap-3"><Clock className="mt-0.5 text-primary" size={18} /><div><p className="font-display text-[10px] uppercase tracking-[0.24em] text-muted-foreground">Response time</p><p>Within 1 business day</p></div></li>
             </ul>
             <div className="mt-6 flex gap-3">
               <a href="https://github.com/mmaikol-dev" target="_blank" rel="noreferrer" className="rounded-sm border border-primary/40 p-2 transition-colors hover:border-primary hover:text-primary"><Github size={18} /></a>
@@ -87,25 +87,25 @@ function ContactPage() {
           {status === "success" ? (
             <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center py-12 text-center">
               <div className="flex h-16 w-16 items-center justify-center rounded-full border border-primary bg-primary/20 text-primary"><Check size={32} /></div>
-              <h3 className="mt-4 font-display text-2xl font-semibold uppercase tracking-wide">The scroll is received</h3>
-              <p className="mt-2 font-serif italic text-muted-foreground">We shall answer within a single sun's turn.</p>
+              <h3 className="mt-4 font-display text-2xl font-semibold uppercase tracking-wide">Message received</h3>
+              <p className="mt-2 font-serif italic text-muted-foreground">We'll get back to you within one business day.</p>
             </motion.div>
           ) : (
             <>
               <div className="grid gap-5 md:grid-cols-2">
-                <Field name="name" label="Your Name" error={errors.name} />
-                <Field name="email" label="Envoy Address (Email)" type="email" error={errors.email} />
-                <Field name="company" label="House / Company" />
-                <Select name="projectType" label="Rite Requested" options={["Web Temple", "Mobile Augury", "Enterprise Citadel", "Agentic Oracle", "Other"]} />
-                <Select name="budget" label="Tribute (Budget)" options={["< $10k", "$10k–$25k", "$25k–$50k", "$50k–$100k", "$100k+"]} />
+                <Field name="name" label="Your name" error={errors.name} />
+                <Field name="email" label="Email" type="email" error={errors.email} />
+                <Field name="company" label="Company" />
+                <Select name="projectType" label="Project type" options={["Web app", "Mobile app", "Enterprise system", "AI / Agents", "Other"]} />
+                <Select name="budget" label="Budget" options={["< $10k", "$10k–$25k", "$25k–$50k", "$50k–$100k", "$100k+"]} />
               </div>
               <div>
-                <label className="mb-2 block font-display text-[10px] uppercase tracking-[0.28em] text-muted-foreground">The Petition</label>
+                <label className="mb-2 block font-display text-[10px] uppercase tracking-[0.28em] text-muted-foreground">Message</label>
                 <textarea name="message" rows={5} className="w-full resize-none rounded-sm border border-primary/40 bg-input/60 px-4 py-3 font-serif outline-none transition-colors focus:border-primary" />
                 {errors.message && <p className="mt-1 text-xs text-destructive">{errors.message}</p>}
               </div>
               <button disabled={status === "sending"} className="inline-flex w-full items-center justify-center gap-2 rounded-sm border border-primary bg-primary px-6 py-3 font-display text-xs uppercase tracking-[0.24em] text-primary-foreground transition-all hover:shadow-[0_0_40px_var(--gold)] disabled:opacity-50">
-                {status === "sending" ? <><Loader2 className="animate-spin" size={18} /> Sending Scroll…</> : "Deliver the Scroll"}
+                {status === "sending" ? <><Loader2 className="animate-spin" size={18} /> Sending…</> : "Send message"}
               </button>
             </>
           )}
@@ -114,7 +114,7 @@ function ContactPage() {
 
       {/* FAQ */}
       <section className="mx-auto max-w-3xl px-6 py-20">
-        <h2 className="text-center font-display text-4xl font-bold uppercase md:text-5xl">Common <span className="text-glow">questions</span></h2>
+        <h2 className="text-center font-display text-4xl font-bold uppercase md:text-5xl">Frequently asked <span className="text-glow">questions</span></h2>
         <div className="mt-10 space-y-3">
           {faqs.map((f, i) => (
             <div key={i} className="glass overflow-hidden">

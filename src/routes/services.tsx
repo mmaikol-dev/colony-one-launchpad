@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowRight, Scroll, Shield, Sparkles, Feather, Crown, Hexagon, Bot, Users, Workflow, Brain } from "lucide-react";
+import { ArrowRight, Code2, Shield, Sparkles, Smartphone, Cloud, Hexagon, Bot, Users, Workflow, Brain, Plug } from "lucide-react";
 import ParticleField from "@/components/ParticleField";
 import Tilt3D from "@/components/Tilt3D";
 import architect from "@/assets/myth-architect.jpg";
@@ -16,8 +16,8 @@ import beePalace from "@/assets/myth-bee-palace.jpg";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Rites — Colony One" },
-      { name: "description", content: "The sacred rites of Colony One: web temples, mobile auguries, enterprise citadels, agentic oracles, cloud acropolises." },
+      { title: "Services — Colony One" },
+      { name: "description", content: "Web, mobile, enterprise systems, agentic AI, automation and cloud engineering by Colony One." },
       { property: "og:image", content: amphitheater },
     ],
   }),
@@ -25,52 +25,52 @@ export const Route = createFileRoute("/services")({
 });
 
 const services = [
-  { icon: Brain, title: "Agentic Oracles", desc: "Autonomous AI agents that reason, plan and execute — the digital seers of your court.", img: beeQueen },
-  { icon: Users, title: "Divine Digital Employees", desc: "Tireless AI workers for sales, support and research — trained on your sacred scrolls.", img: architect },
-  { icon: Workflow, title: "n8n & Automation Auguries", desc: "Workflows that connect every altar, temple and marketplace you rely upon.", img: nectar },
-  { icon: Bot, title: "LLM & RAG Sanctuaries", desc: "Custom oracles, fine-tuned models and vector-search reliquaries over your private knowledge.", img: amphitheater },
-  { icon: Scroll, title: "Web Temples", desc: "Marble-clean web applications carved in React, Next.js and the finest modern tooling.", img: beePalace },
-  { icon: Shield, title: "Enterprise Citadels", desc: "Fortified platforms and internal systems built to withstand any siege.", img: antWarrior },
-  { icon: Sparkles, title: "Mobile Auguries", desc: "Native and cross-platform apps for iOS and Android — omens in every pocket.", img: statues },
-  { icon: Feather, title: "API Aqueducts", desc: "REST and GraphQL aqueducts channelling data between every temple in your realm.", img: antMetropolis },
-  { icon: Crown, title: "Cloud Acropolises", desc: "Scalable AWS, GCP and Azure architectures with bulletproof CI/CD rites.", img: nectar },
-  { icon: Hexagon, title: "Design of the Divine", desc: "Interfaces sculpted with the reverence of Athenian craftsmen — beauty backed by research.", img: architect },
+  { icon: Brain, title: "Agentic AI", desc: "Autonomous AI agents that reason, plan and execute across your tools and data.", img: beeQueen },
+  { icon: Users, title: "AI Digital Employees", desc: "Tireless AI workers for sales, support and research — trained on your knowledge base.", img: architect },
+  { icon: Workflow, title: "n8n & Automation", desc: "Workflows that connect every SaaS, database and API in your stack.", img: nectar },
+  { icon: Bot, title: "LLM & RAG Systems", desc: "Custom LLM apps, fine-tuned models and vector search over your private data.", img: amphitheater },
+  { icon: Code2, title: "Web Applications", desc: "Fast, accessible web apps built with React, Next.js and modern tooling.", img: beePalace },
+  { icon: Shield, title: "Enterprise Systems", desc: "Internal platforms, SACCO, HMS, WMS and payments — built to scale safely.", img: antWarrior },
+  { icon: Smartphone, title: "Mobile Apps", desc: "Native and cross-platform apps for iOS and Android with React Native and Flutter.", img: statues },
+  { icon: Plug, title: "APIs & Integrations", desc: "REST and GraphQL APIs that keep data flowing between every system you own.", img: antMetropolis },
+  { icon: Cloud, title: "Cloud & DevOps", desc: "Scalable AWS, GCP and Azure architecture with rock-solid CI/CD.", img: nectar },
+  { icon: Hexagon, title: "Product Design", desc: "UI/UX design and design systems — beauty backed by user research.", img: architect },
 ];
 
 const process = [
-  { step: "I",   title: "Divination", desc: "We commune with your goals, users and constraints." },
-  { step: "II",  title: "Blueprint",  desc: "Sketches, wireframes and pixel-perfect design systems etched in marble." },
-  { step: "III", title: "Forge",      desc: "Engineering with weekly ceremonies and unwavering transparency." },
-  { step: "IV",  title: "Trial",      desc: "QA, performance auguries and security hardening." },
-  { step: "V",   title: "Consecrate", desc: "Zero-downtime deployment — the temple opens its doors." },
-  { step: "VI",  title: "Tend",       desc: "Ongoing rites of iteration, monitoring and evolution." },
+  { step: "01", title: "Discover", desc: "We understand your goals, users and constraints." },
+  { step: "02", title: "Design",   desc: "Wireframes, prototypes and a design system." },
+  { step: "03", title: "Build",    desc: "Engineering in weekly sprints with full transparency." },
+  { step: "04", title: "Test",     desc: "QA, performance and security hardening." },
+  { step: "05", title: "Ship",     desc: "Zero-downtime deployment to production." },
+  { step: "06", title: "Support",  desc: "Ongoing iteration, monitoring and improvement." },
 ];
 
 const techCategories: Record<string, string[]> = {
-  "Web Marble":     ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue", "Three.js"],
-  "Bronze Engines": ["Node.js", "Python", "Go", "Express", "FastAPI", "GraphQL"],
-  "Auguries":       ["React Native", "Flutter", "Swift", "Kotlin"],
-  "Sky Citadels":   ["AWS", "GCP", "Azure", "Cloudflare", "Vercel", "Docker", "Kubernetes"],
-  "Reliquaries":    ["PostgreSQL", "MongoDB", "Redis", "Firebase", "Supabase"],
-  "Oracles":        ["OpenAI", "Anthropic Claude", "LangChain", "LangGraph", "n8n", "MCP", "Pinecone", "Vercel AI SDK"],
+  "Web":        ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue", "Three.js"],
+  "Backend":    ["Node.js", "Python", "Go", "Express", "FastAPI", "GraphQL"],
+  "Mobile":     ["React Native", "Flutter", "Swift", "Kotlin"],
+  "Cloud":      ["AWS", "GCP", "Azure", "Cloudflare", "Vercel", "Docker", "Kubernetes"],
+  "Data":       ["PostgreSQL", "MongoDB", "Redis", "Firebase", "Supabase"],
+  "AI":         ["OpenAI", "Anthropic Claude", "LangChain", "LangGraph", "n8n", "MCP", "Pinecone", "Vercel AI SDK"],
 };
 
 function ServicesPage() {
-  const [tab, setTab] = useState<keyof typeof techCategories>("Web Marble");
+  const [tab, setTab] = useState<keyof typeof techCategories>("Web");
   return (
     <div className="pt-24">
       {/* HERO */}
       <section className="relative overflow-hidden py-32 text-center">
         <div className="absolute inset-0">
-          <img src={amphitheater} alt="Golden amphitheater at dusk" className="h-full w-full object-cover" />
+          <img src={amphitheater} alt="" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-background/85" />
         </div>
         <ParticleField density={50} />
         <div className="relative mx-auto max-w-4xl px-6">
-          <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Book of Rites</p>
-          <h1 className="mt-4 font-display text-5xl font-bold uppercase md:text-7xl">Sacred <span className="text-glow">Rites</span></h1>
+          <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Services</p>
+          <h1 className="mt-4 font-display text-5xl font-bold uppercase md:text-7xl">What we <span className="text-glow">build</span></h1>
           <div className="laurel-divider my-6 mx-auto max-w-md"><span className="font-display text-[11px] uppercase tracking-[0.28em]">✦</span></div>
-          <p className="mx-auto max-w-xl font-serif text-lg italic text-muted-foreground">Ten disciplines by which we consecrate software.</p>
+          <p className="mx-auto max-w-xl font-serif text-lg italic text-muted-foreground">Ten disciplines we combine to ship modern software.</p>
         </div>
       </section>
 
@@ -97,7 +97,7 @@ function ServicesPage() {
                   <h3 className="font-display text-xl font-semibold uppercase tracking-wide">{s.title}</h3>
                   <p className="mt-2 font-serif leading-relaxed text-muted-foreground">{s.desc}</p>
                   <Link to="/contact" className="mt-5 inline-flex items-center gap-2 font-display text-[11px] uppercase tracking-[0.24em] text-primary">
-                    Invoke this rite <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                    Get in touch <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
               </Tilt3D>
@@ -108,8 +108,8 @@ function ServicesPage() {
 
       {/* PROCESS */}
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">The Six Ceremonies</p>
-        <h2 className="mt-2 font-display text-4xl font-bold uppercase md:text-5xl">How we <span className="text-glow">forge</span></h2>
+        <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Our process</p>
+        <h2 className="mt-2 font-display text-4xl font-bold uppercase md:text-5xl">How we <span className="text-glow">work</span></h2>
         <div className="relative mt-16">
           <div className="absolute left-0 right-0 top-10 hidden h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent md:block" />
           <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-6">
@@ -126,10 +126,10 @@ function ServicesPage() {
         </div>
       </section>
 
-      {/* TECH ARSENAL */}
+      {/* TECH STACK */}
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">The Armory</p>
-        <h2 className="mt-2 font-display text-4xl font-bold uppercase md:text-5xl">Our <span className="text-glow">arsenal</span></h2>
+        <p className="font-display text-[11px] uppercase tracking-[0.32em] text-primary">Our stack</p>
+        <h2 className="mt-2 font-display text-4xl font-bold uppercase md:text-5xl">Technologies we <span className="text-glow">use</span></h2>
         <div className="mt-8 flex flex-wrap gap-2">
           {Object.keys(techCategories).map((cat) => (
             <button
@@ -156,9 +156,9 @@ function ServicesPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-4xl px-6 py-32 text-center">
-        <h2 className="font-display text-4xl font-bold uppercase md:text-6xl">A labour <span className="text-glow">in mind?</span></h2>
+        <h2 className="font-display text-4xl font-bold uppercase md:text-6xl">Have a project <span className="text-glow">in mind?</span></h2>
         <Link to="/contact" className="mt-10 inline-flex items-center gap-2 rounded-sm border border-primary bg-primary px-8 py-4 font-display text-xs uppercase tracking-[0.24em] text-primary-foreground transition-all hover:shadow-[0_25px_50px_-10px_var(--gold)]">
-          Speak your vision <ArrowRight size={16} />
+          Let's talk <ArrowRight size={16} />
         </Link>
       </section>
     </div>
